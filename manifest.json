@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "Simple Sticky Notepad",
+  "version": "1.4.1",
+  "description": "A simple local sticky notepad with shadcn/ui Tailwind-style CSS, full textarea resize follow, no shadows, and Documents file save.",
+  "action": {
+    "default_title": "Simple Sticky Notepad",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "downloads"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [ "tailwind-preflight.css", "icons.svg", "themes.css" ],
+      "matches": [ "<all_urls>" ]
+    }
+  ],
+  "commands": {
+    "save-note": {
+      "suggested_key": {
+        "default": "Ctrl+S",
+        "mac": "Command+S"
+      },
+      "description": "Save the current note"
+    }
+  }
+}
