@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Sticky Notepad Options</title>
+  <link rel="stylesheet" href="tailwind-preflight.css">
+</head>
+<body class="p-8 bg-white text-black dark:bg-black dark:text-white font-mono">
+
+  <div class="max-w-md mx-auto">
+    <h1 class="text-2xl font-bold mb-6">Sticky Notepad Options</h1>
+    <form id="optionsForm" class="space-y-4">
+      <div>
+        <label for="defaultWidth" class="block text-sm font-medium mb-1">Default Width (px)</label>
+        <input type="number" id="defaultWidth" min="260" required class="w-full p-2 border rounded-md outline-none font-mono text-sm border-black bg-white text-black dark:border-white dark:bg-black dark:text-white">
+        <p class="text-xs mt-1 text-black/60 dark:text-white/60">Minimum width is 260px.</p>
+      </div>
+      <div>
+        <label for="defaultHeight" class="block text-sm font-medium mb-1">Default Height (px)</label>
+        <input type="number" id="defaultHeight" min="190" required class="w-full p-2 border rounded-md outline-none font-mono text-sm border-black bg-white text-black dark:border-white dark:bg-black dark:text-white">
+        <p class="text-xs mt-1 text-black/60 dark:text-white/60">Minimum height is 190px.</p>
+      </div>
+      <div>
+        <label for="theme" class="block text-sm font-medium mb-1">Theme</label>
+        <select id="theme" class="w-full p-2 border rounded-md outline-none font-mono text-sm border-black bg-white text-black dark:border-white dark:bg-black dark:text-white">
+          <option value="system">System</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="sepia">Sepia</option>
+        </select>
+      </div>
+      <button type="submit" id="saveButton" class="px-4 py-2 border rounded-md border-black bg-white text-black dark:border-white dark:bg-black dark:text-white">Save Settings</button>
+    </form>
+    <div id="status" class="mt-4 text-sm h-5"></div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

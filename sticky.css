@@ -1,0 +1,185 @@
+#simple-sticky-notepad-root {
+  position: fixed;
+  z-index: 2147483647;
+  width: 334px;
+  height: 250px;
+  min-width: 260px;
+  min-height: 190px;
+  max-width: calc(100vw - 16px);
+  max-height: calc(100vh - 16px);
+  display: flex !important;
+  flex-direction: column !important;
+  border: 1px solid hsl(var(--ssn-border)) !important;
+  border-radius: 0.3rem !important;
+  background: hsl(var(--ssn-card)) !important;
+  box-shadow: none;
+  color: hsl(var(--ssn-card-foreground)) !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace !important;
+  overflow: hidden !important;
+  resize: both !important;
+  color-scheme: light !important;
+  --ssn-background: 0 0% 100%; /* white */
+  --ssn-foreground: 0 0% 0%; /* black */
+  --ssn-card: 0 0% 100%; /* white */
+  --ssn-card-foreground: 0 0% 0%; /* black */
+  --ssn-primary: 0 0% 0%; /* black */
+  --ssn-secondary: 0 0% 100%; /* white */
+  --ssn-muted: 0 0% 100%; /* white */
+  --ssn-muted-foreground: 0 0% 0%; /* black */
+  --ssn-accent: 0 0% 100%; /* white */
+  --ssn-accent-foreground: 0 0% 0%; /* black */
+  --ssn-border: 0 0% 0%; /* black */
+  --ssn-input: 0 0% 100%; /* white */
+  --ssn-ring: 0 0% 0%; /* black */
+}
+
+#simple-sticky-notepad-root * {
+  box-sizing: border-box !important;
+  border-radius: 0.3rem !important;
+  border-color: hsl(var(--ssn-border)) !important;
+}
+
+#simple-sticky-notepad-root .ssn-head {
+  height: 36px !important;
+  min-height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+  padding: 7px 8px !important;
+  background: hsl(var(--ssn-muted)) !important;
+  border-bottom: 1px solid hsl(var(--ssn-border)) !important;
+  cursor: move !important;
+  -webkit-user-select: none !important;
+  flex: 0 0 36px !important;
+}
+
+#simple-sticky-notepad-root .ssn-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  font-size: 12px !important;
+  font-weight: 650 !important;
+  letter-spacing: -0.01em !important;
+  color: hsl(var(--ssn-foreground)) !important;
+  min-width: 0 !important;
+}
+
+#simple-sticky-notepad-root .ssn-title span {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+#simple-sticky-notepad-root svg {
+  width: 15px !important;
+  height: 15px !important;
+  fill: currentColor !important;
+  flex: 0 0 auto !important;
+}
+
+#simple-sticky-notepad-root .ssn-title svg {
+  color: hsl(var(--ssn-primary)) !important;
+}
+
+#simple-sticky-notepad-root .ssn-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  flex: 0 0 auto !important;
+}
+
+#simple-sticky-notepad-root .ssn-icon-btn {
+  width: 24px !important;
+  height: 22px !important;
+  border: 1px solid hsl(var(--ssn-border)) !important;
+  background: hsl(var(--ssn-background)) !important;
+  color: hsl(var(--ssn-foreground)) !important;
+  display: grid !important;
+  place-items: center !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  box-shadow: none;
+  color: hsl(var(--ssn-accent-foreground)) !important;
+}
+
+#simple-sticky-notepad-root .ssn-body {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  height: auto !important;
+  display: grid !important;
+  grid-template-rows: minmax(0, 1fr) auto !important;
+  gap: 6px !important;
+  padding: 8px !important;
+  background: hsl(var(--ssn-card)) !important;
+  overflow: hidden !important;
+}
+
+#simple-sticky-notepad-root .ssn-note {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  display: block !important;
+  resize: none !important;
+  border: 1px solid hsl(var(--ssn-input)) !important;
+  background: hsl(var(--ssn-background)) !important;
+  color: hsl(var(--ssn-foreground)) !important;
+  padding: 9px !important;
+  font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace !important;
+  outline: 0 !important;
+  overflow: auto !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+}
+
+#simple-sticky-notepad-root .ssn-meta {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 7px !important;
+  margin: 0 !important;
+  color: hsl(var(--ssn-muted-foreground)) !important;
+  font-size: 11px !important;
+  overflow: hidden !important;
+}
+
+#simple-sticky-notepad-root .ssn-meta-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  flex: 0 0 auto !important;
+}
+
+#simple-sticky-notepad-root .ssn-save {
+  height: 24px !important;
+  border: 1px solid hsl(var(--ssn-border)) !important;
+  background: hsl(var(--ssn-background)) !important;
+  color: hsl(var(--ssn-foreground)) !important;
+  padding: 4px 8px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  box-shadow: none;
+  color: hsl(var(--ssn-accent-foreground)) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  #simple-sticky-notepad-root {
+    color-scheme: dark !important;
+    --ssn-background: 0 0% 0%; /* black */
+    --ssn-foreground: 0 0% 100%; /* white */
+    --ssn-card: 0 0% 0%; /* black */
+    --ssn-card-foreground: 0 0% 100%; /* white */
+    --ssn-primary: 0 0% 100%; /* white */
+    --ssn-secondary: 0 0% 0%; /* black */
+    --ssn-muted: 0 0% 0%; /* black */
+    --ssn-muted-foreground: 0 0% 100%; /* white */
+    --ssn-accent: 0 0% 0%; /* black */
+    --ssn-accent-foreground: 0 0% 100%; /* white */
+    --ssn-border: 0 0% 100%; /* white */
+    --ssn-input: 0 0% 0%; /* black */
+    --ssn-ring: 0 0% 100%; /* white */
+  }
+}

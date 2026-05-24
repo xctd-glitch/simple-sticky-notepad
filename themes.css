@@ -1,0 +1,62 @@
+:root {
+  --ssn-bg: white;
+  --ssn-text: black;
+  --ssn-border: black;
+  --ssn-muted-bg: #f9fafb; /* gray-50 */
+  --ssn-input-bg: white;
+}
+
+.dark {
+  --ssn-bg: black;
+  --ssn-text: white;
+  --ssn-border: white;
+  --ssn-muted-bg: #111827; /* gray-900 */
+  --ssn-input-bg: black;
+}
+
+.sepia {
+  --ssn-bg: #fbf1c7;
+  --ssn-text: #3c3836;
+  --ssn-border: #928374;
+  --ssn-muted-bg: #ebdbb2;
+  --ssn-input-bg: #fbf1c7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light):not(.sepia) {
+    --ssn-bg: black;
+    --ssn-text: white;
+    --ssn-border: white;
+    --ssn-muted-bg: #111827; /* gray-900 */
+    --ssn-input-bg: black;
+  }
+}
+
+body {
+  background-color: var(--ssn-bg);
+  color: var(--ssn-text);
+  border-color: var(--ssn-border);
+}
+
+/* Popup specific styles to avoid inline styles */
+textarea#noteText {
+  border-color: var(--ssn-border);
+  background-color: var(--ssn-input-bg);
+  color: var(--ssn-text);
+}
+
+footer {
+  border-top-color: var(--ssn-border);
+}
+
+footer button {
+  border-color: var(--ssn-border);
+}
+
+#statusDot {
+  background-color: green;
+}
+
+#statusDot.unsaved {
+  background-color: orange;
+}
